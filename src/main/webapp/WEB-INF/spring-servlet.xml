@@ -71,6 +71,7 @@
 	<bean id="extendedTableController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/tables/extended.jsp"/></bean>  
 	<bean id="regularTableController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/tables/regular.jsp"/></bean>  
 	
+	<bean id="loginActionController" class="com.example.hk.controller.LoginActionController"><property name="redirectHtml" value="dashboard.html"/></bean>  
 	
 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
@@ -79,6 +80,7 @@
 				<prop key="/calendar.html">calendarController</prop>
 				<prop key="/charts.html">chartsController</prop>
 				<prop key="/dashboard.html">dashboardController</prop>
+				<prop key="/login_action.html">loginActionController</prop>
 				<prop key="/template.html">templateController</prop>
 				<prop key="/widgets.html">widgetsController</prop>
 				

@@ -66,7 +66,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
-                            <form method="#" action="#">
+                            <form method="POST" action="../login_action.html">
                                 <div class="card card-login card-hidden">
                                     <div class="card-header text-center" data-background-color="rose">
                                         <h4 class="card-title">Login</h4>
@@ -91,8 +91,8 @@
                                                 <i class="material-icons">face</i>
                                             </span>
                                             <div class="form-group label-floating">
-                                                <label class="control-label">First Name</label>
-                                                <input type="text" class="form-control">
+                                                <label class="control-label">Full Name</label>
+                                                <input type="text" class="form-control" name='fullName'/>
                                             </div>
                                         </div>
                                         <div class="input-group">
@@ -101,7 +101,7 @@
                                             </span>
                                             <div class="form-group label-floating">
                                                 <label class="control-label">Email address</label>
-                                                <input type="email" class="form-control">
+                                                <input type="email" class="form-control" name='email'/>
                                             </div>
                                         </div>
                                         <div class="input-group">
@@ -110,7 +110,7 @@
                                             </span>
                                             <div class="form-group label-floating">
                                                 <label class="control-label">Password</label>
-                                                <input type="password" class="form-control">
+                                                <input type="password" class="form-control" name='password'/>
                                             </div>
                                         </div>
                                     </div>

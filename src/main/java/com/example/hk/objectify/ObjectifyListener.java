@@ -13,21 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 //[START all]
-package com.example.guestbook;
+package com.example.hk.objectify;
 
-import com.googlecode.objectify.annotation.Entity;
-import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.ObjectifyService;
 
-/**
- * The @Entity tells Objectify about our entity.  We also register it in
- * OfyHelper.java -- very important.
- *
- * This is never actually created, but gives a hint to Objectify about our Ancestor key.
- */
-@Entity
-public class Guestbook {
-  @Id public String book;
+import javax.servlet.ServletContextListener;
+import javax.servlet.ServletContextEvent;
+
+ 
+public class ObjectifyListener implements ServletContextListener {
+  public void contextInitialized(ServletContextEvent event) {
+ 
+    ObjectifyService.register(LoginAccount.class);
+  }
+
+  public void contextDestroyed(ServletContextEvent event) {
+    // App Engine does not currently invoke this method.
+  }
 }
 //[END all]

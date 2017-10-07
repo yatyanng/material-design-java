@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!doctype html>
 <html lang="en">
 
@@ -44,8 +46,13 @@
                     </div>
                     <div class="info">
                         <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                            <span>
-                                Kaman Tse
+                            <span> 
+                                <c:choose>
+									<c:when test="${not empty loginAccount.fullName}">
+										<c:out value="${fn:escapeXml(loginAccount.fullName)}" />
+									</c:when>
+									<c:otherwise>Anonymous User</c:otherwise>
+                                </c:choose> 
                                 <b class="caret"></b>
                             </span>
                         </a>
