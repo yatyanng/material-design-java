@@ -23,5 +23,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/material-design-pro-1.0.0/WEB-INF/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/material-design-pro-1.0.0/WEB-INF/classes"/>
 </classpath>
