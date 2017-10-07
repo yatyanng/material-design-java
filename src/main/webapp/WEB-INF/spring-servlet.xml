@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans     
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/tx   
+		http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+ 		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/websocket
+		http://www.springframework.org/schema/websocket/spring-websocket-4.2.xsd">
+	<context:annotation-config />
+	<tx:jta-transaction-manager />
+	<tx:annotation-driven  transaction-manager="transactionManager" proxy-target-class="true"/>
+	
+ 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="classpath:system.properties" />
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+	</bean>
+ 
+	<mvc:interceptors>
+		<ref bean="localeChangeInterceptor" />
+	</mvc:interceptors>
+	
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en" />
+	</bean>
+ 	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="language" />
+	</bean>
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="basenames">
+			<list>
+				<value>classpath:locale</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="dashboardController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/dashboard.jsp"/></bean>  
+	<bean id="calendarController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/calendar.jsp"/></bean>  
+	<bean id="chartsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/charts.jsp"/></bean>   
+	<bean id="templateController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/template.jsp"/></bean>  
+	<bean id="widgetsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/widgets.jsp"/></bean>  
+				
+	<bean id="buttonsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/buttons.jsp"/></bean>  
+	<bean id="gridController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/grid.jsp"/></bean>  
+	<bean id="iconsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/icons.jsp"/></bean>  
+	<bean id="notificationsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/notifications.jsp"/></bean>  
+	<bean id="panelsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/panels.jsp"/></bean>  
+	<bean id="sweetAlertController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/sweet-alert.jsp"/></bean>  
+	<bean id="typographyController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/typography.jsp"/></bean>  
+	
+	<bean id="extendedFormController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/forms/extended.jsp"/></bean>  
+	<bean id="regularController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/forms/regular.jsp"/></bean>  
+	<bean id="validationController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/forms/validation.jsp"/></bean>  
+	<bean id="wizardController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/forms/wizard.jsp"/></bean>  
+				
+	<bean id="fullscreenController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/maps/fullscreen.jsp"/></bean>  
+	<bean id="googleController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/maps/google.jsp"/></bean>  
+	<bean id="vectorController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/maps/extended.jsp"/></bean>  
+				
+	<bean id="loginController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/pages/login.jsp"/></bean>  
+	<bean id="lockController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/pages/lock.jsp"/></bean>  
+	<bean id="pricingController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/pages/pricing.jsp"/></bean>  
+	<bean id="registerController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/pages/register.jsp"/></bean>  
+	<bean id="timelineController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/pages/timeline.jsp"/></bean>  
+	<bean id="userController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/pages/user.jsp"/></bean>  
+	
+	<bean id="datatablesController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/tables/datatables.net.jsp"/></bean>  
+	<bean id="extendedTableController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/tables/extended.jsp"/></bean>  
+	<bean id="regularTableController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/tables/regular.jsp"/></bean>  
+	
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>  
+				<prop key="/">dashboardController</prop> 
+				<prop key="/calendar.html">calendarController</prop>
+				<prop key="/charts.html">chartsController</prop>
+				<prop key="/dashboard.html">dashboardController</prop>
+				<prop key="/template.html">templateController</prop>
+				<prop key="/widgets.html">widgetsController</prop>
+				
+				<prop key="/components/buttons.html">buttonsController</prop>
+				<prop key="/components/grid.html">gridController</prop>
+				<prop key="/components/icons.html">iconsController</prop>
+				<prop key="/components/notifications.html">notificationsController</prop>
+				<prop key="/components/panels.html">panelsController</prop>
+				<prop key="/components/sweet-alert.html">sweetAlertController</prop>
+				<prop key="/components/typography.html">typographyController</prop>
+				
+				<prop key="/forms/extended.html">extendedFormController</prop>
+				<prop key="/forms/regular.html">regularFormController</prop>
+				<prop key="/forms/validation.html">validationController</prop>
+				<prop key="/forms/wizard.html">wizardController</prop>
+				
+				<prop key="/maps/fullscreen.html">fullscreenController</prop>
+				<prop key="/maps/google.html">googleController</prop>
+				<prop key="/maps/vector.html">vectorController</prop>
+				
+				<prop key="/pages/login.html">loginController</prop>
+				<prop key="/pages/lock.html">lockController</prop>
+				<prop key="/pages/pricing.html">pricingController</prop>
+				<prop key="/pages/register.html">registerController</prop>
+				<prop key="/pages/timeline.html">timelineController</prop>
+				<prop key="/pages/user.html">userController</prop>
+				
+				<prop key="/tables/datatables.net.html">datatablesController</prop>
+				<prop key="/tables/extended.html">extendedTableController</prop>
+				<prop key="/tables/regular.html">regularTableController</prop> 
+			</props>
+		</property>
+	</bean>
+ 	
+</beans>
