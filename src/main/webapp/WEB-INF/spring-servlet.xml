@@ -6,18 +6,12 @@
 	xmlns:websocket="http://www.springframework.org/schema/websocket"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans     
-		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
-		http://www.springframework.org/schema/tx   
-		http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd
  		http://www.springframework.org/schema/context 
-		http://www.springframework.org/schema/context/spring-context-4.2.xsd
-		http://www.springframework.org/schema/websocket
-		http://www.springframework.org/schema/websocket/spring-websocket-4.2.xsd">
-	<context:annotation-config />
-	<tx:jta-transaction-manager />
-	<tx:annotation-driven  transaction-manager="transactionManager" proxy-target-class="true"/>
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+	<context:annotation-config /> 
 	
  	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations" value="classpath:system.properties" />
@@ -49,33 +43,33 @@
 	<bean id="templateController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/template.jsp"/></bean>  
 	<bean id="widgetsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/widgets.jsp"/></bean>  
 				
-	<bean id="buttonsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/buttons.jsp"/></bean>  
-	<bean id="gridController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/grid.jsp"/></bean>  
-	<bean id="iconsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/icons.jsp"/></bean>  
-	<bean id="notificationsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/notifications.jsp"/></bean>  
-	<bean id="panelsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/panels.jsp"/></bean>  
-	<bean id="sweetAlertController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/sweet-alert.jsp"/></bean>  
-	<bean id="typographyController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/components/typography.jsp"/></bean>  
+	<bean id="buttonsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/components/buttons.jsp"/></bean>  
+	<bean id="gridController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/components/grid.jsp"/></bean>  
+	<bean id="iconsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/components/icons.jsp"/></bean>  
+	<bean id="notificationsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/components/notifications.jsp"/></bean>  
+	<bean id="panelsController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/components/panels.jsp"/></bean>  
+	<bean id="sweetAlertController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/components/sweet-alert.jsp"/></bean>  
+	<bean id="typographyController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/components/typography.jsp"/></bean>  
 	
-	<bean id="extendedFormController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/forms/extended.jsp"/></bean>  
-	<bean id="regularController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/forms/regular.jsp"/></bean>  
-	<bean id="validationController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/forms/validation.jsp"/></bean>  
-	<bean id="wizardController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/forms/wizard.jsp"/></bean>  
+	<bean id="extendedFormController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/forms/extended.jsp"/></bean>  
+	<bean id="regularFormController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/forms/regular.jsp"/></bean>  
+	<bean id="validationController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/forms/validation.jsp"/></bean>  
+	<bean id="wizardController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/forms/wizard.jsp"/></bean>  
 				
-	<bean id="fullscreenController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/maps/fullscreen.jsp"/></bean>  
-	<bean id="googleController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/maps/google.jsp"/></bean>  
-	<bean id="vectorController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/maps/extended.jsp"/></bean>  
+	<bean id="fullscreenController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/maps/fullscreen.jsp"/></bean>  
+	<bean id="googleController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/maps/google.jsp"/></bean>  
+	<bean id="vectorController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/maps/extended.jsp"/></bean>  
 				
-	<bean id="loginController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/pages/login.jsp"/></bean>  
-	<bean id="lockController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/pages/lock.jsp"/></bean>  
-	<bean id="pricingController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/pages/pricing.jsp"/></bean>  
-	<bean id="registerController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/pages/register.jsp"/></bean>  
-	<bean id="timelineController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/pages/timeline.jsp"/></bean>  
-	<bean id="userController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/pages/user.jsp"/></bean>  
+	<bean id="loginController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/pages/login.jsp"/></bean>  
+	<bean id="lockController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/pages/lock.jsp"/></bean>  
+	<bean id="pricingController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/pages/pricing.jsp"/></bean>  
+	<bean id="registerController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/pages/register.jsp"/></bean>  
+	<bean id="timelineController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/pages/timeline.jsp"/></bean>  
+	<bean id="userController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/pages/user.jsp"/></bean>  
 	
-	<bean id="datatablesController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/tables/datatables.net.jsp"/></bean>  
-	<bean id="extendedTableController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/tables/extended.jsp"/></bean>  
-	<bean id="regularTableController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="jsp/tables/regular.jsp"/></bean>  
+	<bean id="datatablesController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/tables/datatables.net.jsp"/></bean>  
+	<bean id="extendedTableController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/tables/extended.jsp"/></bean>  
+	<bean id="regularTableController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/tables/regular.jsp"/></bean>  
 	
 	
 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
