@@ -58,7 +58,7 @@
 				
 	<bean id="fullscreenController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/maps/fullscreen.jsp"/></bean>  
 	<bean id="googleController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/maps/google.jsp"/></bean>  
-	<bean id="vectorController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/maps/extended.jsp"/></bean>  
+	<bean id="vectorController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/maps/vector.jsp"/></bean>  
 				
 	<bean id="loginController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/pages/login.jsp"/></bean>  
 	<bean id="lockController" class="com.example.hk.controller.SimpleController"><property name="forwardJsp" value="../jsp/pages/lock.jsp"/></bean>  
