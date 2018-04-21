@@ -1,7 +1,7 @@
 # material-design-java
 How to Mix Java with Material Design from Creative Tim 
 
-Hi, this project is completedly experimental.
+This project is completely experimental.
 
 I tried to mix Material Design from Creative Tim (HTML Template) with Google Cloud Platform (Cloud Web Hosting) together.
 
